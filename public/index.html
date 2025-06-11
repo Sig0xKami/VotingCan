@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votación Blockchain</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.1/ethers.umd.min.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗳️ Sistema de Votación Blockchain</h1>
+            <p>Plataforma descentralizada de votación segura y transparente</p>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-dot" id="connectionStatus"></div>
+                <span id="connectionText">Desconectado</span>
+            </div>
+            <div class="status-item">
+                <strong>Cuenta:</strong> <span id="currentAccount">No conectada</span>
+            </div>
+            <div class="status-item">
+                <strong>Ronda Actual:</strong> <span id="currentRound">-</span>
+            </div>
+            <div class="status-item">
+                <strong>Es Presidente:</strong> <span id="isPresident">No</span>
+            </div>
+        </div>
+
+        <div id="alerts"></div>
+
+        <!-- Conexión y Configuración -->
+        <div class="card">
+            <h2>🔗 Conexión</h2>
+            <div class="input-group">
+                <label for="contractAddress">Dirección del Contrato:</label>
+                <input type="text" id="contractAddress" placeholder="0x1234567890abcdef1234567890abcdef12345678" value="" />
+                <small style="color: #666; font-size: 12px;">Ingresa aquí la dirección de tu contrato desplegado</small>
+            </div>
+            <button class="btn" onclick="connectWallet()">Conectar Wallet</button>
+            <button class="btn btn-success" onclick="loadContract()">Cargar Contrato</button>
+        </div>
+
+        <div class="grid-2">
+            <!-- Panel de Administración -->
+            <div class="card" id="adminPanel" style="display: none;">
+                <h2>👑 Panel de Administración</h2>
+                <div class="input-group">
+                    <label for="newCandidateAddress">Dirección del Candidato:</label>
+                    <input type="text" id="newCandidateAddress" placeholder="0x..." />
+                </div>
+                <button class="btn" onclick="addCandidate()">Agregar Candidato</button>
+                <button class="btn btn-danger" onclick="finalizeVoting()">Finalizar Votación</button>
+                <button class="btn btn-success" onclick="startNewRound()">Nueva Ronda</button>
+            </div>
+
+            <!-- Panel de Votación -->
+            <div class="card">
+                <h2>🗳️ Votación</h2>
+                <button class="btn" onclick="loadCandidates()">Cargar Candidatos</button>
+                <div id="candidatesContainer"></div>
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="card">
+            <h2>📊 Resultados Actuales</h2>
+            <button class="btn" onclick="loadCurrentResults()">Actualizar Resultados</button>
+            <div id="resultsContainer"></div>
+        </div>
+
+        <!-- Historial de Rondas -->
+        <div class="card">
+            <h2>📈 Historial de Rondas</h2>
+            <button class="btn" onclick="loadRoundHistory()">Cargar Historial</button>
+            <div id="historyContainer"></div>
+        </div>
+    </div>
+
+   <script src="./scripts.js"></script>
+</body>
+</html>

@@ -36,6 +36,10 @@ contract VotingCandidatso{
     event candidato_agregado(address nombre);
     event Ganador_Obtenido(address ganador, uint256 votosGanador);
     event Ronda_Reniciar(uint256 rondaActual);
+
+    function obtenerPresidente() public view returns (address) {
+        return President;
+    }
     function agregarCandidato(address _id) public OnlyPresident{
       require(!candidatosPorRonda[rondaActual][_id].activo, "The candidate has already been added");
       candidatosPorRonda[rondaActual][_id] = Candidato({
