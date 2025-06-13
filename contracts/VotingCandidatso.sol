@@ -17,7 +17,7 @@ contract VotingCandidatso{
     mapping(uint256 => mapping(address => uint256)) public votesRondaC;
     //      RondasActual => lista de candidatos
     mapping(uint256 => address[]) public listaCandidatosPorRonda;
-    
+    //       RondasActual =>    votos del ganador
     mapping(uint256 => uint256) public votosGanadorPorRonda;
     // ganador por ronda 
     //      RondasActual =>    ganador => votosGanador

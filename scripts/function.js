@@ -2,7 +2,7 @@ const { ethers } = require("hardhat");
 
 async function main() {
   // Dirección del contrato desplegado en tu red local Hardhat (o despliega uno aquí)
-  const contractAddress = "0x5e3e52b14f7Ba7362c4695A55246BE59BD5D53D8";
+  const contractAddress = "0xc9d8ee95b5159331789b910F653A33F114ce4d17";
 
   // ABI (pega el JSON del ABI completo)
   const abi = [{
