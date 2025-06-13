@@ -22,7 +22,6 @@ Ideal para aplicaciones descentralizadas educativas, DAOs simples, votaciones in
 ## 🛠️ Tecnologías
 
 - Solidity `^0.8.26`
-- Compatible con OpenZeppelin (no requiere herencias externas)
 - Deploy sugerido con Hardhat
 
 ---
