@@ -3,7 +3,7 @@ require("dotenv").config(); // Asegúrate de usar dotenv si usas variables de en
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.28",
+  solidity: "0.8.26",
   
 networks: {
     sepolia: {
