@@ -15,14 +15,13 @@ Este contrato permite:
 - Consultar resultados históricos por ronda.
 - Iniciar nuevas rondas controladas por una única cuenta "presidente".
 
-Ideal para aplicaciones descentralizadas educativas, DAOs simples, votaciones institucionales o elecciones internas.
 
 ---
 
 ## 🛠️ Tecnologías
 
 - Solidity `^0.8.26`
-- Deploy sugerido con Hardhat
+- Hardhat
 
 ---
 
